@@ -11,7 +11,7 @@ using namespace std;
 // start main function
 int main () {
     // declare variable
-    int year;
+    int year=0;
     // ask user for birth year
     cout << "What is your birth year?: "; 
     // get input of birth year
@@ -20,15 +20,12 @@ int main () {
     if (year < 1000 || year > 9999) { 
         cout << "Please enter a valid birth year that is 4 digits\n"; 
     } // if year is divisible by 100 then output to user that year is not a leap year
-    else if (year % 100 == 0) { 
-        cout << year << " is not a leap year"; 
-    } // if year is divisible by 4 or 400 then tell user it is a leap year
-    else if (year % 4 == 0 || year % 400 == 0) { 
-        cout << year << " is a leap year";  
+    else if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) { 
+        cout << year << " is a leap year"; 
     }
     // if year is not divisible by 4, 100, or 400, then tell user it is not a leap year
     else { 
-        cout << year << " is not a leap year"; 
+        cout << "This is not a leap year";
     }
     // end program
     return 0; 
